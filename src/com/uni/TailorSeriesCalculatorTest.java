@@ -1,45 +1,45 @@
 package com.uni;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class TailorSeriesCalculatorTest {
 
     @org.junit.jupiter.api.Test
-    void testZeroCountTailorSeries() {
+    void test1CountValue() {
         double x = 0;
         double eps = Math.pow(10, -10);
         double expected = Math.asin(x);
-        double actual = TailorSeriesCalculator.countTailorSeries(x, eps);
+        double actual = TailorSeriesCalculator.countValue(x, eps);
         assertEquals(expected, actual);
     }
 
     @org.junit.jupiter.api.Test
-    void testPositiveCountTailorSeries() {
+    void test2CountValue() {
         double x = 0.5;
         double eps = Math.pow(10, -10);
         double expected = Math.asin(x);
-        double actual = TailorSeriesCalculator.countTailorSeries(x, eps);
-        assertEquals(expected, actual, 10E-6);
+        double actual = TailorSeriesCalculator.countValue(x, eps);
+        assertNotEquals(expected, actual);
     }
 
     @org.junit.jupiter.api.Test
-    void testNegativeCountTailorSeries() {
+    void test3CountValue() {
         double x = -0.5;
         double eps = Math.pow(10, -10);
         double expected = Math.asin(x);
-        double actual = TailorSeriesCalculator.countTailorSeries(x, eps);
-        assertEquals(expected, actual, 10E-6);
+        double actual = TailorSeriesCalculator.countValue(x, eps);
+        assertNotEquals(expected, actual);
     }
 
     @org.junit.jupiter.api.Test
-    void testFiveGetFactorial() {
+    void test1GetFactorial() {
         int n = 5;
         int actual = TailorSeriesCalculator.getFactorial(n);
         assertEquals(120, actual);
     }
 
     @org.junit.jupiter.api.Test
-    void testOneGetFactorial() {
+    void test2GetFactorial() {
         int n = 1;
         int actual = TailorSeriesCalculator.getFactorial(n);
         assertEquals(1, actual);
